@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+      /* The container declaration is what lets one template answer more than
+         one width. An element cannot query its OWN size — only an ancestor's —
+         so the item's root declares itself here, once, and the @container rule
+         below can ask how much room it was given. Remove this line and every
+         @container block stops matching, in silence. */
+      .content-item {
+        container-type: inline-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 8rem;
+        padding: 2rem;
+        background: #e8f0fa;
+        color: #33506b;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      /* Given more room, open it up a little. This is the container query in
+         use rather than described — the same item is meant to sit in a narrow
+         column on one page and full width on another, and this is how one
+         design covers both. */
+      @container (min-width: 30rem) {
+        .content-item {
+          min-height: 12rem;
+          font-size: 0.9375rem;
+          letter-spacing: 0.3em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="content-item">Edit me.</article>
+  </body>
+</html>
