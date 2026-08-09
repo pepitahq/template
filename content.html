@@ -1,55 +1,17 @@
 <html>
   <head>
-    <style>
-      /* The container declaration is what lets one template answer more than
-         one width. An element cannot query its OWN size — only an ancestor's —
-         so the item's root declares itself here, once, and the @container rule
-         below can ask how much room it was given. Remove this line and every
-         @container block stops matching, in silence. */
-      .content-item {
-        container-type: inline-size;
-        /* "Fill the slot I was given" — not a size of its own. The page (and
-           pepita's own preview) decides the box; every pepita preview surface
-           already gives this root a real height, so the item fills it there,
-           and on a founder's page it sits at whatever height the placement
-           allows, with the floor below as the only guarantee. Nothing here
-           reaches outside the item: no html/body rule, no page background. */
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        min-height: 8rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 1.1em;
-        padding: 2rem;
-        background: #f0f0f0;
-        color: #6b6b6b;
-        font-family: sans-serif;
-        font-size: 0.8125rem;
-        font-weight: 600;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        text-align: left;
-      }
+    <!-- Deliberately empty, and worth a word because it used to hold this
+         collection's styling.
 
-      .content-item p {
-        margin: 0;
-      }
+         The markup below describes ONE ITEM and is stamped once per record, so a
+         <style> here would repeat its rules for every item on the page — which is
+         why pepita drops any it finds, silently. The styling lives in this
+         collection's own style.css instead: ONE file, shared by every layout,
+         linked once per page.
 
-      /* Given more room, open it up a little. This is the container query in
-         use rather than described — the same item is meant to sit in a narrow
-         column on one page and full width on another, and this is how one
-         design covers both. */
-      @container (min-width: 30rem) {
-        .content-item {
-          min-height: 12rem;
-          font-size: 0.9375rem;
-          letter-spacing: 0.3em;
-        }
-      }
-    </style>
+         Edit it in the editor under Content → this collection → FILES, or with
+         write_content_file. The same goes for behaviour: script.js, which runs
+         once for the whole page rather than once per item. -->
   </head>
   <body>
     <article class="content-item">
